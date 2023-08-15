@@ -4,7 +4,7 @@ import Monedas from './components/Monedas';
 import "./App.css"
 
 function App() {
-  const [data, setData] = useState({})
+  const [data, setData] = useState([])
   const [inputValue, setInputValue] = useState('');
   const [showResult, setShowResult] = useState(false)
   const [pesos, setPesos] = useState(0);
@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     // Realizar la llamada a la API cuando el componente se monte
-    axios.get('https://api.bluelytics.com.ar/v2/latest')
+    axios.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
       .then(response => {
         setData(response.data);
       })

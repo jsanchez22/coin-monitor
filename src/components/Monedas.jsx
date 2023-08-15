@@ -7,13 +7,13 @@ export default function Monedas({datos,pesos,showResult}) {
         "Euro Oficial",
         "Euro Blue"
       ];
-      
+      const datoMonedas = datos.slice(0,7)
     return (
     <div className="row">
-      {Object.keys(datos).map((moneda,index) => (
-        moneda!="last_update"?        
-        <div key={moneda} className="col-md-4 p-4 " >
-          <Card  titulo={monedasName[index]} pesos={pesos} showResult={showResult} moneda={datos[moneda]} />
+      {datoMonedas.map((moneda,index) => (
+        moneda.casa.nombre!="Bitcoin"?        
+        <div key={index} className="col-md-4 p-4 " >
+          <Card  titulo={moneda.casa.nombre} pesos={pesos} showResult={showResult} moneda={moneda.casa} />
           </div>:""
           ))}
     </div>
