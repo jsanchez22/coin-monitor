@@ -3,10 +3,10 @@ import React from 'react'
 export default function Card({titulo, moneda , pesos , showResult}) {
           const ars = parseInt(pesos)  
           const changeCoin = (coin) => {
-            return ars/coin 
+            return (ars/coin).toFixed(2) 
           } 
   return (    
-    <div className='card row rounded my-3 text-light text-center ' > 
+    <div className='card row rounded text-light text-center ' > 
             <div className='card-header rounded-top '>
                <h1>{titulo}</h1>
             </div>
@@ -17,7 +17,7 @@ export default function Card({titulo, moneda , pesos , showResult}) {
                 <h4 className='bg-success rounded d-flex justify-content-around'>
                 <span>COMPRA</span>
                 <span > {moneda.value_buy} </span></h4>
-                {showResult ? <>{changeCoin(moneda.value_buy)}</>:""}
+                {showResult ?<h1>$ {changeCoin(moneda.value_buy)}</h1>:""}
             </div>
     </div>
    
