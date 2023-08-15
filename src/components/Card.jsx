@@ -18,10 +18,10 @@ export default function Card({titulo, moneda , pesos , showResult}) {
             <div className='card-body'>
                 <h4 className='bg-danger rounded d-flex justify-content-around'>
                 <span>VENTA</span>
-                <span > {moneda.compra} </span></h4>
+                <span > {moneda.venta} </span></h4>
                 <h4 className='bg-success rounded d-flex justify-content-around'>
                 <span>COMPRA</span>
-                <span > {moneda.venta} </span></h4>
+                <span > {moneda.compra} </span></h4>
                 {showResult ?<h1>$ {changeCoin(moneda.compra)}</h1>:""}
             </div>
     </div>
